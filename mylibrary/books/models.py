@@ -16,11 +16,11 @@ class Book(models.Model):
         return cls.objects.all()
 
     @classmethod
-    def get_books_by_author(cls, author: str) -> QuerySet['Book']:
+    def get_books_by_author(cls, author_name) -> QuerySet['Book']:
         """
         특정 저자의 책만 반환
         """
-        return cls.objects.filter(author=author)
+        return cls.objects.filter(author=author_name)
 
     @classmethod
     def get_books_by_title_keyword(cls, keyword) -> QuerySet['Book']:
