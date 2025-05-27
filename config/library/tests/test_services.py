@@ -47,4 +47,4 @@ def test_get_borrow_history_for_book_no_history():
     with pytest.raises(BookHasNoBorrowHistory) as exc_info:
         get_borrow_history_for_book(book)
 
-    assert '도서에는 대출 이력이 없습니다.' in str(exc_info.value)
+    assert f"책 '{book.title}'에는 대출 이력이 없습니다." in str(exc_info.value)
